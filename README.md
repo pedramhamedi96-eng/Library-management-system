@@ -34,3 +34,17 @@ for running the project tests.
 
 GitHub Actions builds the Docker image
 and executes unit tests inside the container.
+
+
+## Pipeline Diagram
+
+```mermaid
+flowchart TD
+    A[Push Code to GitHub] --> B[Checkout Code]
+    B --> C[Build Docker Image]
+    C --> D[Run Unit Tests]
+    D --> E{Tests Passed?}
+    E -->|Yes| F[Pipeline Success]
+    E -->|No| G[Test Failure]
+```
+
